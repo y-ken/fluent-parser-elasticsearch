@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = "0.0.1"
   spec.authors       = ["Kentaro Yoshida"]
   spec.email         = ["y.ken.studio@gmail.com"]
-  spec.summary       = %q{Fluentd Input plugin add-on for in_tail. It provides 3rd party in_tail format rules working with postfix, qmail and elasticsearch.}
+  spec.summary       = %q{Fluentd Parser Plugin to add choice for `format` option for elasticsearch logs with in_tail plugin.}
   spec.homepage      = "https://github.com/y-ken/fluent-parser-elasticsearch"
   spec.license       = "Apache License, Version 2.0"
 
