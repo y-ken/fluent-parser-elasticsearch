@@ -1,4 +1,4 @@
-# Fluentd Parser for elasticsearch
+# Fluentd Parser for elasticsearch [![Build Status](https://travis-ci.org/y-ken/fluent-parser-elasticsearch.png?branch=master)](https://travis-ci.org/y-ken/fluent-parser-elasticsearch)
 
 [Fluentd](http://fluentd.org/) Parser Plugin to add choice for `format` option for elasticsearch logs with `in_tail` plugin.
 
