@@ -31,5 +31,19 @@ class ElasticsearchParserTest < Test::Unit::TestCase
       'message' => 'bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/10.0.0.185:9200]}'
     }, record)
   end
+
+  def test_call2
+
+    time, record = @parser.call('[2014-10-17 15:24:37,229][WARN ][monitor.jvm              ] [James Proudstar] [gc][old][481][8] duration [15s], collections [1]/[15.4s], total [15s]/[23s], memory [7.3gb]->[4.6gb]/[7.9gb], all_pools {[young] [3.8mb]->[5.8mb]/[532.5mb]}{[survivor] [66.5mb]->[0b]/[66.5mb]}{[old] [7.2gb]->[4.6gb]/[7.3gb]}')
+
+    assert_equal(str2time('2014-10-17 15:24:37,229', '%Y-%m-%d %H:%M:%S,%L'), time)
+    assert_equal({
+      'log_level' => 'WARN',
+      'log_type' => 'monitor.jvm',
+      'node_name' => 'James Proudstar',
+      'message' => '[gc][old][481][8] duration [15s], collections [1]/[15.4s], total [15s]/[23s], memory [7.3gb]->[4.6gb]/[7.9gb], all_pools {[young] [3.8mb]->[5.8mb]/[532.5mb]}{[survivor] [66.5mb]->[0b]/[66.5mb]}{[old] [7.2gb]->[4.6gb]/[7.3gb]}'
+    }, record)
+  end
+
 end
 

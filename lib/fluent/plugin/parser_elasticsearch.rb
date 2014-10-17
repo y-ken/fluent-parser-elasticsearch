@@ -3,7 +3,7 @@ module Fluent
 
     parser_elasticsearch = Proc.new {
       RegexpParser.new(
-        /^\[(?<time>[^ ]* [^ ]*)\]\[(?<log_level>[^ ]*) *?\]\[(?<log_type>[^ ]*) *\] \[(?<node_name>[^ ]*) *\] (?<message>.+)/,
+        /^\[(?<time>[^ ]* [^ ]*)\]\[(?<log_level>[^ ]*) *?\]\[(?<log_type>[^ ]*) *\] \[(?<node_name>[^\]]*) *\] (?<message>.+)/,
         {'time_format' => "%Y-%m-%d %H:%M:%S,%L"}
       )
     }
